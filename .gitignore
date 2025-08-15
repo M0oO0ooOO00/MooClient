@@ -13,6 +13,8 @@
 # testing
 /coverage
 
+.idea
+
 .env
 
 # next.js

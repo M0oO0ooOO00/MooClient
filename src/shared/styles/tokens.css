@@ -1,0 +1,60 @@
+/* === Typography tokens === */
+@theme inline {
+    /* font families */
+    --font-sans: "Pretendard Variable", Pretendard, ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple SD Gothic Neo",
+    "Noto Sans KR", "Malgun Gothic", sans-serif;
+
+    /* font weights */
+    --font-weight-b: 700;   /* Bold */
+    --font-weight-sb: 600;  /* SemiBold */
+    --font-weight-m: 500;   /* Medium */
+    --font-weight-r: 400;   /* Regular */
+
+    /* line-heights */
+    --leading-140: 1.4;     /* 140% */
+    --leading-150: 1.5;     /* 150% */
+
+    /* Title sizes */
+    --text-t01: 26px;
+    --text-t02: 24px;
+    --text-t03: 22px;
+    --text-t04: 20px;
+
+    /* Body sizes */
+    --text-b01: 18px;
+    --text-b02: 16px;
+    --text-b03: 14px;
+
+    /* Caption size */
+    --text-c01: 12px;
+
+    /* === Effects / Shadows ===
+     shadow_01: (0,4,8,0, #000 3%) + (4,0,8,0, #000 3%)
+     shadow_02: (0,4,16,0, #000 5%) + (4,0,16,0, #000 5%)
+     shadow_03: (0,4,32,0, #000 5%) + (4,0,32,0, #000 5%)
+  */
+    --shadow-01: 0 4px 8px 0 rgb(0 0 0 / 0.03), 4px 0 8px 0 rgb(0 0 0 / 0.03);
+    --shadow-02: 0 4px 16px 0 rgb(0 0 0 / 0.05), 4px 0 16px 0 rgb(0 0 0 / 0.05);
+    --shadow-03: 0 4px 32px 0 rgb(0 0 0 / 0.05), 4px 0 32px 0 rgb(0 0 0 / 0.05);
+
+    /* === Gray palette (physical tokens) === */
+    --color-white: #FAFAFA;
+    --color-black: #0E0E0E;
+
+    --color-gray-50:  #F5F5F5;
+    --color-gray-100: #ECECEC;
+    --color-gray-200: #DDDEE0;
+    --color-gray-300: #AAACB2;
+    --color-gray-400: #95969B;
+    --color-gray-500: #7A7D82;
+    --color-gray-600: #6F7176;
+    --color-gray-700: #57585C;
+    --color-gray-800: #434448;
+    --color-gray-850: #333537;
+    --color-gray-900: #29292C;
+    --color-gray-950: #1B1B1B;
+}
+
+/* 폰트 패밀리 기본값 */
+:root { font-family: var(--font-sans); }

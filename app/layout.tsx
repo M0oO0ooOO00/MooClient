@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Providers from './providers';
-import "./globals.css";
-
+// import "./globals.css";
+import "@/shared/styles/index.css";
 
 export const metadata: Metadata = {
   title: "Create Next",

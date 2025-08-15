@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj,Decorator } from "@storybook/react";
 import {TextField} from "@/shared/ui/input/text-field";
 
 
-const Wrapper = (Story: any) => (
+const Wrapper:Decorator = (Story) => (
     <div className="font-sans grid place-items-center min-h-[60vh] p-8">
         <div className="space-y-4 bg-background p-6 rounded-xl border border-border w-[28.75rem]">
             <Story />

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Input as ShadInput } from "@/components/ui/input"; // shadcn 원본
+import { Input as ShadInput } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import {InputHTMLAttributes} from "react";
@@ -55,7 +55,9 @@ export interface TextFieldProps
 
 export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
     ({ className, tone, size, state, errorMessage, helperText, id, ...props }, ref) => {
-        const computedId = id ?? React.useId();
+        const autoId = React.useId();
+        const computedId = id ?? autoId;
+
         const describedBy = errorMessage
             ? `${computedId}-error`
             : helperText

@@ -2,6 +2,7 @@ import { CtaButton } from "@/shared/ui/button/cta-button";
 import { CtaSmall } from "@/shared/ui/button/cta-small";
 import { Dropdown } from "@/shared/ui/dropdown/dropdown";
 import { ToggleSwitch } from "@/shared/ui/switch/toggle-switch";
+import { BgmTag } from "@/shared/ui/tag/bgm-tag";
 
 export default function Home() {
   return (
@@ -54,6 +55,16 @@ export default function Home() {
               },
             ]}
           />
+        </div>
+
+        {/* BGM 태그 컴포넌트들 */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">BGM 태그 컴포넌트</h3>
+
+          <div className="space-y-4">
+            <BgmTag text="응원가 부르는거 좋아해요" />
+            <BgmTag text="응원가 부르는거 좋아해요" selected={true} />
+          </div>
         </div>
       </div>
     </div>

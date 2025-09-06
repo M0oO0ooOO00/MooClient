@@ -1,4 +1,5 @@
 import { CtaButton } from "@/shared/ui/button/cta-button";
+import { CtaSmall } from "@/shared/ui/button/cta-small";
 import { Dropdown } from "@/shared/ui/dropdown/dropdown";
 
 export default function Home() {
@@ -14,6 +15,18 @@ export default function Home() {
           </CtaButton>
           <CtaButton variant="outline">회원가입 완료</CtaButton>
         </div>
+        {/* CTA Small 컴포넌트들 */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">CTA Small 컴포넌트</h3>
+
+          <div className="space-y-3">
+            <CtaSmall variant="primary" text="필터" />
+            <CtaSmall variant="secondary" text="필터" />
+            <CtaSmall variant="subtle" text="필터" />
+            <CtaSmall variant="outline" text="필터" />
+          </div>
+        </div>
+
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">드롭다운 컴포넌트</h3>
 

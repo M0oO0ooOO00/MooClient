@@ -30,8 +30,7 @@ export default function TextFields() {
       <div className="w-full">
         <FormLabel>성별</FormLabel>
         <Dropdown
-          placeholder="성별을 선택해주세요"
-          fieldSize={"md"}
+          placeholder="성별을 선택하세요"
           items={[
             {
               options: genderItems.map((item) => ({
@@ -54,7 +53,7 @@ export default function TextFields() {
         <FormLabel>응원하는 팀</FormLabel>
         <Dropdown
           placeholder="응원하는 팀을 선택하세요."
-          className="px-5 py-4"
+          className=""
           items={[
             {
               options: baseBallTeamItems.map((item) => ({

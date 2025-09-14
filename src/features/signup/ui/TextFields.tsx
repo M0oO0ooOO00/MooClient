@@ -1,6 +1,9 @@
+"use client";
+
 import { TextField } from "@/shared/ui/input/text-field";
 import { FormLabel } from "./FormLabel";
 import { Dropdown } from "@/shared/ui/dropdown/dropdown";
+import React, { ReactNode, useState } from "react";
 
 const genderItems = [
   { value: "male", label: "남성" },
@@ -20,50 +23,97 @@ const baseBallTeamItems = [
   { value: "LG", label: "LG 트윈스" },
 ];
 
+const genderDropdownItems = [
+  {
+    options: genderItems.map((item) => ({
+      value: item.value,
+      text: item.label,
+    })),
+  },
+];
+
+const baseBallTeamDropdownItems = [
+  {
+    options: baseBallTeamItems.map((item) => ({
+      value: item.value,
+      text: item.label,
+    })),
+  },
+];
+
+const FormField = ({ label, children }: { label: string; children: ReactNode }) => (
+  <div className="flex flex-col gap-2.5 w-full">
+    <FormLabel>{label}</FormLabel>
+    {children}
+  </div>
+);
+
 export default function TextFields() {
+  const [formData, setFormData] = useState({
+    name: "",
+    gender: "",
+    birthDate: "",
+    phoneNumber: "",
+    favoriteTeam: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    console.log(name, value);
+  };
+
+  const handleDropdownChange = (name: string) => (value: string) => {
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
   return (
     <div className="flex flex-col justify-start gap-5 w-full">
-      <div className="w-full">
-        <FormLabel>이름</FormLabel>
-        <TextField placeholder="이름을 입력해주세요" />
-      </div>
-      <div className="w-full">
-        <FormLabel>성별</FormLabel>
+      <FormField label="이름">
+        <TextField
+          className="h-[60px] px-[22px] py-4 leading-[28px] !text-[16px] placeholder:font-normal font-medium"
+          name="name"
+          placeholder="이름을 입력해주세요"
+          value={formData.name}
+          onChange={handleChange}
+        />
+      </FormField>
+      <FormField label="성별">
         <Dropdown
+          className="h-[60px] px-[22px] py-4 text-[16px]"
           placeholder="성별을 선택하세요"
-          items={[
-            {
-              options: genderItems.map((item) => ({
-                value: item.value,
-                text: item.label,
-              })),
-            },
-          ]}
+          items={genderDropdownItems}
+          value={formData.gender}
+          onValueChange={handleDropdownChange("gender")}
         />
-      </div>
-      <div className="w-full">
-        <FormLabel>생년월일</FormLabel>
-        <TextField placeholder="0000.00.00" />
-      </div>
-      <div className="w-full">
-        <FormLabel>휴대폰 번호</FormLabel>
-        <TextField placeholder="010-0000-0000" />
-      </div>
-      <div className="w-full">
-        <FormLabel>응원하는 팀</FormLabel>
+      </FormField>
+      <FormField label="생년월일">
+        <TextField
+          className="h-[60px] px-[22px] py-4 leading-[28px] !text-[16px] placeholder:font-normal font-medium"
+          name="birthDate"
+          placeholder="0000.00.00"
+          value={formData.birthDate}
+          onChange={handleChange}
+        />
+      </FormField>
+      <FormField label="휴대폰 번호">
+        <TextField
+          className="h-[60px] px-[22px] py-4 leading-[28px] !text-[16px] placeholder:font-normal font-medium"
+          name="phoneNumber"
+          placeholder="010-0000-0000"
+          value={formData.phoneNumber}
+          onChange={handleChange}
+        />
+      </FormField>
+      <FormField label="응원하는 팀">
         <Dropdown
+          className="h-[60px] px-[22px] py-4 text-[16px]"
           placeholder="응원하는 팀을 선택하세요."
-          className=""
-          items={[
-            {
-              options: baseBallTeamItems.map((item) => ({
-                value: item.value,
-                text: item.label,
-              })),
-            },
-          ]}
+          items={baseBallTeamDropdownItems}
+          value={formData.favoriteTeam}
+          onValueChange={handleDropdownChange("favoriteTeam")}
         />
-      </div>
+      </FormField>
     </div>
   );
 }

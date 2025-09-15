@@ -1,5 +1,6 @@
 import TextFields from "@/features/signup/ui/TextFields";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const genderItems = [
   { value: "male", label: "남성" },
@@ -24,7 +25,14 @@ export default function SignUpForm() {
     <div className="w-[460px] m-auto flex flex-col justify-start items-center gap-14">
       <div className="gap-12 w-full items-center flex flex-col">
         {/* 프로필 이미지 */}
-        <div className="w-[170px] h-[170px] bg-gray-100 rounded-full"></div>
+        {/*<div className="w-[170px] h-[170px] bg-gray-100 rounded-full"></div>*/}
+        <Image
+          src={"/images/default.png"}
+          width={170}
+          height={170}
+          className={"rounded-full"}
+          alt={"프로필 사진"}
+        />
         <TextFields baseBallTeamItems={baseBallTeamItems} genderItems={genderItems} />
       </div>
       <Button className="w-full h-16 px-44 py-5">회원가입 완료</Button>

@@ -101,7 +101,7 @@ export default function TextFields({
             />
           ) : (
             <Dropdown
-              className="h-[60px] px-[22px] py-4 text-[16px]"
+              className="!h-[60px] px-[22px] py-4 text-[16px]"
               placeholder={placeholder}
               items={items!}
               value={formData[name]}

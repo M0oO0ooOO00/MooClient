@@ -4,6 +4,8 @@ import { useState, ReactNode } from "react";
 import { TextField } from "@/shared/ui/input/text-field";
 import { FormLabel } from "./FormLabel";
 import { Dropdown } from "@/shared/ui/dropdown/dropdown";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 interface FormData {
   name: string;
@@ -88,28 +90,40 @@ export default function TextFields({
   ];
 
   return (
-    <div className="flex flex-col justify-start gap-5 w-full">
-      {fields.map(({ label, name, type, placeholder, items }) => (
-        <FormField key={name} label={label}>
-          {type === "text" ? (
-            <TextField
-              className="h-[60px] px-[22px] py-4 leading-[28px] !text-[16px] placeholder:font-normal font-medium"
-              name={name}
-              placeholder={placeholder}
-              value={formData[name]}
-              onChange={(e) => updateField(name, e.target.value)}
-            />
-          ) : (
-            <Dropdown
-              className="!h-[60px] px-[22px] py-4 text-[16px]"
-              placeholder={placeholder}
-              items={items!}
-              value={formData[name]}
-              onValueChange={(value) => updateField(name, value)}
-            />
-          )}
-        </FormField>
-      ))}
+    <div className="gap-12 w-full items-center flex flex-col">
+      <Image
+        src={"/images/default.png"}
+        width={170}
+        height={170}
+        className={"rounded-full"}
+        alt={"프로필 사진"}
+      />
+      <div className="flex flex-col gap-[60px]">
+        <div className="flex flex-col justify-start gap-5 w-full">
+          {fields.map(({ label, name, type, placeholder, items }) => (
+            <FormField key={name} label={label}>
+              {type === "text" ? (
+                <TextField
+                  className="h-[60px] px-[22px] py-4 leading-[28px] !text-[16px] placeholder:font-normal font-medium"
+                  name={name}
+                  placeholder={placeholder}
+                  value={formData[name]}
+                  onChange={(e) => updateField(name, e.target.value)}
+                />
+              ) : (
+                <Dropdown
+                  className="!h-[60px] px-[22px] py-4 text-[16px]"
+                  placeholder={placeholder}
+                  items={items!}
+                  value={formData[name]}
+                  onValueChange={(value) => updateField(name, value)}
+                />
+              )}
+            </FormField>
+          ))}
+        </div>
+        <Button className="w-full h-16 px-44 py-5 text-lg">회원가입 완료</Button>
+      </div>
     </div>
   );
 }

@@ -6,6 +6,7 @@ import { FormLabel } from "./FormLabel";
 import { Dropdown } from "@/shared/ui/dropdown/dropdown";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { DEFAULT_PROFILE_IMAGE, TEAM_ASSETS } from "@/entities/team/teamAssets";
 
 interface FormData {
   name: string;
@@ -49,6 +50,9 @@ export default function TextFields({
     favoriteTeam: baseBallTeamItems?.[0]?.value ?? "",
   });
 
+  const teamAssets = TEAM_ASSETS[formData.favoriteTeam as keyof typeof TEAM_ASSETS];
+  const profileImage = teamAssets?.image ?? DEFAULT_PROFILE_IMAGE;
+
   const updateField = (name: string, value: string) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -91,7 +95,7 @@ export default function TextFields({
   return (
     <div className="gap-12 w-full items-center flex flex-col">
       <Image
-        src={"/images/default.png"}
+        src={profileImage}
         width={170}
         height={170}
         className={"rounded-full"}

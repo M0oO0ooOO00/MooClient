@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <div className="flex flex-col gap-[56px]">
       <Header />
-      <SignUpForm />;
+      <SignUpForm />
     </div>
   );
 }

@@ -43,15 +43,14 @@ export default function TextFields({
 }>) {
   const [formData, setFormData] = useState<FormData>({
     name: "",
-    gender: genderItems[0].value,
+    gender: genderItems?.[0]?.value ?? "",
     birthDate: "",
     phoneNumber: "",
-    favoriteTeam: baseBallTeamItems[0].value,
+    favoriteTeam: baseBallTeamItems?.[0]?.value ?? "",
   });
 
   const updateField = (name: string, value: string) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
-    console.log(name, value);
   };
 
   const fields: FieldConfig[] = [

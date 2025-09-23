@@ -6,7 +6,7 @@ import { BgmTag } from "@/shared/ui/tag/bgm-tag";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 mt-[240px]">
       <div className="space-y-6 bg-background p-6 rounded-xl border border-border w-full max-w-md">
         {/* 버튼 컴포넌트들 */}
         <div className="space-y-3">

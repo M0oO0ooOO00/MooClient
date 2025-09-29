@@ -37,3 +37,6 @@ export default function MainBanner() {
       {bannerItems.map((item) => (
         <BannerCard key={item.href} {...item} />
       ))}
+    </div>
+  );
+}

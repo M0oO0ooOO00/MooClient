@@ -1,6 +1,6 @@
 export default function MainBanner() {
   return (
-    <div className="w-full mx-auto mt-[70px] flex justify-center gap-[30px]">
+    <div className="w-full mt-[70px] flex gap-[30px]">
       <div className="w-[585px] h-[275px] px-[30px] py-[30px] bg-[#0ABF00] rounded-[18px]">
         <div className="flex gap-[153px]">
           <div className="w-[201px] flex flex-col gap-[12px]">

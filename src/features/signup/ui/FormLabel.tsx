@@ -5,9 +5,5 @@ interface FormLabelProps {
 }
 
 export function FormLabel({ children }: FormLabelProps) {
-  return (
-    <p className="self-stretch justify-start text-zinc-500 font-medium font-['Pretendard']">
-      {children}
-    </p>
-  );
+  return <p className="justify-start text-gray-600 b02-m">{children}</p>;
 }

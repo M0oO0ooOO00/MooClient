@@ -3,11 +3,11 @@ import ChatTable from "@/features/chat/components/ChatTable";
 
 export default function ChatPage() {
   const chatListData = [
-    { game: "한화 vs 두산", title: "직관 갈 사람 제발제발", date: "7/28" },
-    { game: "한화 vs 두산", title: "직관 갈 사람 제발제발", date: "7/28" },
-    { game: "한화 vs 두산", title: "직관 갈 사람 제발제발", date: "7/28" },
-    { game: "한화 vs 두산", title: "직관 갈 사람 제발제발", date: "7/28" },
-    { game: "한화 vs 두산", title: "직관 갈 사람 제발제발", date: "7/28" },
+    { id: 1, game: "한화 vs 두산", title: "직관 갈 사람 제발제발", date: "7/28" },
+    { id: 2, game: "한화 vs 두산", title: "직관 갈 사람 제발제발", date: "7/28" },
+    { id: 3, game: "한화 vs 두산", title: "직관 갈 사람 제발제발", date: "7/28" },
+    { id: 4, game: "한화 vs 두산", title: "직관 갈 사람 제발제발", date: "7/28" },
+    { id: 5, game: "한화 vs 두산", title: "직관 갈 사람 제발제발", date: "7/28" },
   ];
 
   return (

@@ -29,7 +29,7 @@ const ReportModal = ({ isOpen, onClose, participants }: ReportModalProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[500px] p-8">
+      <DialogContent className="sm:max-w-[670px] p-8">
         <DialogHeader className="mb-4">
           <DialogTitle className="flex items-center gap-2 text-xl font-bold">
             <Image src="/icons/report.svg" alt="신고 아이콘" width={24} height={24} />
@@ -38,14 +38,14 @@ const ReportModal = ({ isOpen, onClose, participants }: ReportModalProps) => {
           <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"></DialogClose>
         </DialogHeader>
 
-        <div className="grid gap-6">
-          <div>
-            <Label className="text-base font-semibold mb-3 block">대상</Label>
+        <div className="grid gap-[8px]">
+          <div className="pb-[36px]">
+            <Label className="b01-r mb-[20px] block">대상</Label>
             <RadioGroup defaultValue={participants[1]} className="flex flex-wrap gap-x-6 gap-y-2">
               {participants.map((name) => (
                 <div key={name} className="flex items-center space-x-2">
                   <RadioGroupItem value={name} id={name} />
-                  <Label htmlFor={name} className="font-normal">
+                  <Label htmlFor={name} className="b01-r">
                     {name}
                   </Label>
                 </div>
@@ -54,11 +54,11 @@ const ReportModal = ({ isOpen, onClose, participants }: ReportModalProps) => {
           </div>
 
           <div>
-            <Label htmlFor="reason" className="text-base font-semibold mb-3 block">
+            <Label htmlFor="reason" className="b01-r mb-[20px] block">
               사유
             </Label>
             <Select>
-              <SelectTrigger id="reason" className="w-full">
+              <SelectTrigger id="reason" className="w-[260px] b03-r text-muted-foreground">
                 <SelectValue placeholder="신고 사유를 선택해주세요" />
               </SelectTrigger>
               <SelectContent>
@@ -73,10 +73,14 @@ const ReportModal = ({ isOpen, onClose, participants }: ReportModalProps) => {
 
           <Textarea
             placeholder="예시) 이런 기능 있으면 좋겠어요! 이런게 불편해요! 이건 어떻게 하는 건가요?"
-            className="min-h-[120px]"
+            className="min-h-[120px] mb-[44px] placeholder:text-gray-400"
           />
 
-          <Button type="submit" size="lg" className="w-full bg-black text-white hover:bg-gray-800">
+          <Button
+            type="submit"
+            size="lg"
+            className="w-full bg-black text-white text-[18px] h-[70px] hover:bg-gray-800"
+          >
             제출하기
           </Button>
         </div>

@@ -71,6 +71,7 @@
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
+  --color-main-green: #0abf00;
 
   /* optional: sidebar/chart aliases (shadcn sidebar 컴포넌트 사용 시) */
   --color-sidebar: var(--sidebar);
@@ -162,6 +163,7 @@
   --accent-foreground: var(--color-gray-100);
 
   --destructive: #ff6369;
+  --color-main-green: #00c49f;
 
   --border: var(--color-gray-800);
   --input: var(--color-gray-800);

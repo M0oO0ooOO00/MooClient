@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Providers from "./providers";
 import "@/shared/styles/index.css";
+import Header from "@/shared/ui/header/header";
 
 export const metadata: Metadata = {
   title: "Create Next",
@@ -15,7 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        <div className="max-w-[1440px] mx-auto">
+          <Header />
+          <Providers>{children}</Providers>
+        </div>
       </body>
     </html>
   );

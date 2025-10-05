@@ -13,14 +13,14 @@ export default function MateListBanner() {
   return (
     <div className="w-full flex flex-col gap-[20px]">
       <div className="flex justify-between">
-        <h1 className="t02-sb">나의 직관 메이트를 찾아보세요!</h1>
-        <Link href="/home" className="text-[#0ABF00] mt-[16px] b02-r">
+        <h1 className="text-t02-sb">나의 직관 메이트를 찾아보세요!</h1>
+        <Link href="/home" className="text-[#0ABF00] mt-[16px] text-b02-r">
           전체보기
         </Link>
       </div>
       <div className="w-full flex flex-col">
         <div className="bg-gray-100 px-[40px] py-[20px] rounded-t-2xl">
-          <div className="flex justify-between b02-r text-gray-600">
+          <div className="flex justify-between text-b02-r text-gray-600">
             <div className="flex items-center gap-10">
               <p className="w-[120px]">경기</p>
               <p>제목</p>

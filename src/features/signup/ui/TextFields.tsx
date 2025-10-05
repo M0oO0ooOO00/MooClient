@@ -107,7 +107,7 @@ export default function TextFields({
             <FormField key={name} label={label}>
               {type === "text" ? (
                 <TextField
-                  className="h-[60px] px-[22px] py-4 leading-[28px] !b02-m placeholder:font-normal font-medium"
+                  className="h-[60px] px-[22px] py-4 leading-[28px] !text-b02-m placeholder:font-normal font-medium"
                   name={name}
                   placeholder={placeholder}
                   value={formData[name]}
@@ -115,7 +115,7 @@ export default function TextFields({
                 />
               ) : (
                 <Dropdown
-                  className="!h-[60px] px-[22px] py-4 !b02-m"
+                  className="!h-[60px] px-[22px] py-4 !text-b02-m"
                   placeholder={placeholder}
                   items={items!}
                   value={formData[name]}
@@ -125,7 +125,7 @@ export default function TextFields({
             </FormField>
           ))}
         </div>
-        <Button className="w-full h-16 px-44 py-5 b01-sb">회원가입 완료</Button>
+        <Button className="w-full h-16 px-44 py-5 text-b01-sb">회원가입 완료</Button>
       </div>
     </div>
   );

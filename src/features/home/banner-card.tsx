@@ -24,7 +24,7 @@ export default function BannerCard({
       <div className="flex justify-between h-full">
         <div className="flex flex-col gap-[12px]">
           <p className="text-white text-[28px] font-bold">{title}</p>
-          <p className="text-gray-100 b02-r">{description}</p>
+          <p className="text-gray-100 text-b02-r">{description}</p>
         </div>
         <Image src={iconSrc} alt={iconAlt} width={170} height={170} />
       </div>

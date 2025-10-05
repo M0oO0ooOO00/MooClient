@@ -13,7 +13,7 @@ export default function MateItem({
 
   return (
     <div className={`px-[40px] py-[20px] bg-white ${roundedClass}`}>
-      <div className="flex justify-between b02-m">
+      <div className="flex justify-between text-b02-m">
         <div className="flex items-center gap-10">
           <p className="w-[120px]">{match}</p>
           <p className="text-gray-600 truncate">{title}</p>

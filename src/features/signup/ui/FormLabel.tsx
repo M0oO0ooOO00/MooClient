@@ -5,5 +5,5 @@ interface FormLabelProps {
 }
 
 export function FormLabel({ children }: FormLabelProps) {
-  return <p className="justify-start text-gray-600 b02-m">{children}</p>;
+  return <p className="justify-start text-gray-600 text-b02-m">{children}</p>;
 }

@@ -1,7 +1,7 @@
 /* eslint-disable storybook/no-renderer-packages */
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import DateSelect from "../DateSelect";
+import DateSelect from "../date-select";
 
 const meta = {
   title: "write/DateSelect",

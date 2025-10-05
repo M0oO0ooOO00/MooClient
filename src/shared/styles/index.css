@@ -21,118 +21,118 @@
 /* Typography utilities (T/B/C) */
 @layer components {
   /* Title 140% */
-  .t01-b {
+  .text-t01-b {
     font-size: var(--text-t01);
     line-height: var(--leading-140);
     font-weight: var(--font-weight-b);
   }
-  .t01-sb {
+  .text-t01-sb {
     font-size: var(--text-t01);
     line-height: var(--leading-140);
     font-weight: var(--font-weight-sb);
   }
-  .t02-b {
+  .text-t02-b {
     font-size: var(--text-t02);
     line-height: var(--leading-140);
     font-weight: var(--font-weight-b);
   }
-  .t02-sb {
+  .text-t02-sb {
     font-size: var(--text-t02);
     line-height: var(--leading-140);
     font-weight: var(--font-weight-sb);
   }
-  .t03-b {
+  .text-t03-b {
     font-size: var(--text-t03);
     line-height: var(--leading-140);
     font-weight: var(--font-weight-b);
   }
-  .t03-sb {
+  .text-t03-sb {
     font-size: var(--text-t03);
     line-height: var(--leading-140);
     font-weight: var(--font-weight-sb);
   }
-  .t04-b {
+  .text-t04-b {
     font-size: var(--text-t04);
     line-height: var(--leading-140);
     font-weight: var(--font-weight-b);
   }
-  .t04-sb {
+  .text-t04-sb {
     font-size: var(--text-t04);
     line-height: var(--leading-140);
     font-weight: var(--font-weight-sb);
   }
 
   /* Body 150% */
-  .b01-b {
+  .text-b01-b {
     font-size: var(--text-b01);
     line-height: var(--leading-150);
     font-weight: var(--font-weight-b);
   }
-  .b01-sb {
+  .text-b01-sb {
     font-size: var(--text-b01);
     line-height: var(--leading-150);
     font-weight: var(--font-weight-sb);
   }
-  .b01-m {
+  .text-b01-m {
     font-size: var(--text-b01);
     line-height: var(--leading-150);
     font-weight: var(--font-weight-m);
   }
-  .b01-r {
+  .text-b01-r {
     font-size: var(--text-b01);
     line-height: var(--leading-150);
     font-weight: var(--font-weight-r);
   }
 
-  .b02-b {
+  .text-b02-b {
     font-size: var(--text-b02);
     line-height: var(--leading-150);
     font-weight: var(--font-weight-b);
   }
-  .b02-sb {
+  .text-b02-sb {
     font-size: var(--text-b02);
     line-height: var(--leading-150);
     font-weight: var(--font-weight-sb);
   }
-  .b02-m {
+  .text-b02-m {
     font-size: var(--text-b02);
     line-height: var(--leading-150);
     font-weight: var(--font-weight-m);
   }
-  .b02-r {
+  .text-b02-r {
     font-size: var(--text-b02);
     line-height: var(--leading-150);
     font-weight: var(--font-weight-r);
   }
 
-  .b03-b {
+  .text-b03-b {
     font-size: var(--text-b03);
     line-height: var(--leading-150);
     font-weight: var(--font-weight-b);
   }
-  .b03-sb {
+  .text-b03-sb {
     font-size: var(--text-b03);
     line-height: var(--leading-150);
     font-weight: var(--font-weight-sb);
   }
-  .b03-m {
+  .text-b03-m {
     font-size: var(--text-b03);
     line-height: var(--leading-150);
     font-weight: var(--font-weight-m);
   }
-  .b03-r {
+  .text-b03-r {
     font-size: var(--text-b03);
     line-height: var(--leading-150);
     font-weight: var(--font-weight-r);
   }
 
   /* Caption */
-  .c01-m {
+  .text-c01-m {
     font-size: var(--text-c01);
     line-height: var(--leading-150);
     font-weight: var(--font-weight-m);
   }
-  .c01-r {
+  .text-c01-r {
     font-size: var(--text-c01);
     line-height: var(--leading-150);
     font-weight: var(--font-weight-r);

@@ -40,12 +40,12 @@ const ReportModal = ({ isOpen, onClose, participants }: ReportModalProps) => {
 
         <div className="grid gap-[8px]">
           <div className="pb-[36px]">
-            <Label className="b01-r mb-[20px] block">대상</Label>
+            <Label className="text-b01-r mb-[20px] block">대상</Label>
             <RadioGroup defaultValue={participants[1]} className="flex flex-wrap gap-x-6 gap-y-2">
               {participants.map((name) => (
                 <div key={name} className="flex items-center space-x-2">
                   <RadioGroupItem value={name} id={name} />
-                  <Label htmlFor={name} className="b01-r">
+                  <Label htmlFor={name} className="text-b01-r">
                     {name}
                   </Label>
                 </div>
@@ -54,11 +54,11 @@ const ReportModal = ({ isOpen, onClose, participants }: ReportModalProps) => {
           </div>
 
           <div>
-            <Label htmlFor="reason" className="b01-r mb-[20px] block">
+            <Label htmlFor="reason" className="text-b01-r mb-[20px] block">
               사유
             </Label>
             <Select>
-              <SelectTrigger id="reason" className="w-[260px] b03-r text-muted-foreground">
+              <SelectTrigger id="reason" className="w-[260px] text-b03-r text-muted-foreground">
                 <SelectValue placeholder="신고 사유를 선택해주세요" />
               </SelectTrigger>
               <SelectContent>

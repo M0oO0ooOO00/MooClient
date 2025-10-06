@@ -4,14 +4,6 @@ import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
-/**
- * BGM 태그 컴포넌트
- * - 선택/비선택 상태 지원
- * - 음악 아이콘과 텍스트 포함
- * - 215x45 크기
- */
-
-// BGM 아이콘 컴포넌트
 const BgmIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
   <svg
     width="22"
@@ -30,40 +22,40 @@ const BgmIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
     />
     <rect x="7.07031" y="7.07129" width="9.42857" height="3.14286" fill="currentColor" />
     <ellipse
-      cx="5.44934"
-      cy="16.8886"
-      rx="2.48293"
-      ry="1.96429"
-      transform="rotate(-26.0971 5.44934 16.8886)"
+      cx="5.449"
+      cy="16.889"
+      rx="2.483"
+      ry="1.964"
+      transform="rotate(-26.1 5.449 16.889)"
       fill="currentColor"
     />
     <ellipse
       cx="14.879"
-      cy="16.9989"
-      rx="2.48293"
-      ry="1.96429"
-      transform="rotate(-26.0971 14.879 16.9989)"
+      cy="16.999"
+      rx="2.483"
+      ry="1.964"
+      transform="rotate(-26.1 14.879 16.999)"
       fill="currentColor"
     />
   </svg>
 );
 
-const bgmTagVariants = cva(
-  "inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border transition-all duration-200 cursor-pointer select-none",
+const tagVariants = cva(
+  "inline-flex items-center gap-3 rounded-[100px] px-5 py-3 whitespace-nowrap w-auto select-none transition-colors outline outline-1 outline-offset-[-1px]",
   {
     variants: {
-      variant: {
-        default: "bg-white border-gray-300 text-gray-600 hover:border-gray-400",
-        selected: "bg-green-100 border-green-400 text-green-600",
+      state: {
+        default: "bg-neutral-100 outline-zinc-400 text-zinc-500",
+        selected: "bg-green-50 outline-main-green text-main-green",
       },
       size: {
-        sm: "h-8 px-3 text-sm",
-        md: "h-[45px] w-[215px] text-base",
-        lg: "h-12 px-6 text-lg",
+        sm: "text-sm",
+        md: "text-base",
+        lg: "text-lg",
       },
     },
     defaultVariants: {
-      variant: "default",
+      state: "default",
       size: "md",
     },
   }
@@ -71,28 +63,20 @@ const bgmTagVariants = cva(
 
 export interface BgmTagProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof bgmTagVariants> {
+    VariantProps<typeof tagVariants> {
   text: string;
   selected?: boolean;
-  onClick?: () => void;
 }
 
 export const BgmTag = React.forwardRef<HTMLDivElement, BgmTagProps>(
-  ({ className, variant, size, text, selected = false, onClick, ...props }, ref) => {
-    const currentVariant = selected ? "selected" : variant;
-
+  ({ className, text, selected = false, size, state, ...props }, ref) => {
+    const s = selected ? "selected" : (state ?? "default");
     return (
-      <div
-        ref={ref}
-        className={cn(bgmTagVariants({ variant: currentVariant, size }), className)}
-        onClick={onClick}
-        {...props}
-      >
-        <BgmIcon className="w-5 h-5 flex-shrink-0" />
-        <span className="b03-r truncate">{text}</span>
+      <div ref={ref} className={cn(tagVariants({ state: s, size }), className)} {...props}>
+        <BgmIcon className="h-5 w-5 shrink-0" />
+        <span className="font-normal">{text}</span>
       </div>
     );
   }
 );
-
 BgmTag.displayName = "BgmTag";

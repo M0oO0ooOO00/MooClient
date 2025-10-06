@@ -41,7 +41,7 @@ const BgmIcon = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
 );
 
 const tagVariants = cva(
-  "inline-flex items-center gap-3 rounded-[100px] px-5 py-3 whitespace-nowrap w-auto select-none transition-colors outline outline-1 outline-offset-[-1px]",
+  "inline-flex items-center gap-3 rounded-[100px] px-4 py-2 whitespace-nowrap w-auto select-none transition-colors outline outline-1 outline-offset-[-1px]",
   {
     variants: {
       state: {

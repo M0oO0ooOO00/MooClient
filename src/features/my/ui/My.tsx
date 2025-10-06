@@ -20,13 +20,12 @@ export default function My() {
                   // onClick={() => {/* 클릭 핸들러 */}}
                 />
               </div>
-              {/* 텍스트 영역 */}
               <div className="flex flex-col gap-2">
                 <span className="text-sm text-gray-500">닉네임</span>
                 <span className="text-lg font-semibold">윤창현</span>
               </div>
             </div>
-            <Link href="/" className="text-gray-700">
+            <Link href="/edit-profile" className="text-gray-700">
               프로필 수정하기
             </Link>
           </div>

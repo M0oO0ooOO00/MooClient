@@ -49,8 +49,8 @@ export default function My() {
               <p className="text-b01 text-gray-600 font-weight-r">로그인 방법</p>
               {/* TODO: 추후 카카오 이미지 수정 */}
               <Image
-                src="/icons/kakao_icon.svg"
-                alt="카카오"
+                src="/icons/kakao_login.svg"
+                alt="로그인 방법"
                 width={68}
                 height={68}
                 className="cursor-pointer"

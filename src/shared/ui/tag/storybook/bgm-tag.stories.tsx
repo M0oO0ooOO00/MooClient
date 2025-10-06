@@ -5,17 +5,35 @@ import { useState } from "react";
 const meta: Meta<typeof BgmTag> = {
   title: "UI/Tag/BgmTag",
   component: BgmTag,
-  parameters: { layout: "centered" },
+  parameters: {
+    layout: "centered",
+  },
   tags: ["autodocs"],
   argTypes: {
-    variant: { control: { type: "select" }, options: ["default", "selected"] },
-    size: { control: { type: "select" }, options: ["sm", "md", "lg"] },
-    selected: { control: { type: "boolean" } },
-    text: { control: { type: "text" } },
+    variant: {
+      control: { type: "select" },
+      options: ["default", "selected"],
+    },
+    size: {
+      control: { type: "select" },
+      options: ["sm", "md", "lg"],
+    },
+    selected: {
+      control: { type: "boolean" },
+    },
+    text: {
+      control: { type: "text" },
+    },
     onClick: { action: "clicked" },
   },
-  args: { text: "응원가 부르는거 좋아해요", variant: "default", size: "md", selected: false },
+  args: {
+    text: "응원가 부르는거 좋아해요",
+    variant: "default",
+    size: "md",
+    selected: false,
+  },
 };
+
 export default meta;
 type Story = StoryObj<typeof meta>;
 
@@ -34,7 +52,7 @@ export const Default: Story = {
 export const Selected: Story = {
   render: (args) => (
     <Wrapper>
-      <BgmTag {...args} selected />
+      <BgmTag {...args} selected={true} />
     </Wrapper>
   ),
 };
@@ -49,7 +67,7 @@ export const States: Story = {
         </div>
         <div>
           <h3 className="text-sm font-medium mb-2">선택된 상태</h3>
-          <BgmTag text="응원가 부르는거 좋아해요" selected />
+          <BgmTag text="응원가 부르는거 좋아해요" selected={true} />
         </div>
       </div>
     </Wrapper>
@@ -77,22 +95,23 @@ export const Sizes: Story = {
   ),
 };
 
-function InteractiveDemo() {
+const InteractiveWrapper = () => {
   const [selected, setSelected] = useState(false);
+
   return (
     <Wrapper>
       <BgmTag
         text="응원가 부르는거 좋아해요"
         selected={selected}
-        onClick={() => setSelected((v) => !v)}
+        onClick={() => setSelected(!selected)}
       />
       <p className="text-sm text-gray-600">클릭하여 선택 상태를 토글할 수 있습니다.</p>
     </Wrapper>
   );
-}
+};
 
 export const Interactive: Story = {
-  render: () => <InteractiveDemo />,
+  render: () => <InteractiveWrapper />,
 };
 
 export const LongText: Story = {

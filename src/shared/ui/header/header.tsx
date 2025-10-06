@@ -23,7 +23,7 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full h-[84px] bg-neutral-50 flex items-center justify-between z-9999">
+    <header className="w-full h-[84px] bg-white flex items-center justify-between z-9999">
       <div className="flex items-center pt-[29px] pb-[33px] pl-[120px]">
         <Image
           src="/images/typo-default.png"
@@ -39,26 +39,26 @@ export default function Header() {
         {/* 나중에 링크 바꾸기 */}
         {isLogged && (
           <>
-            <Link className="cursor-pointer" href="/chat">
-              <div className="px-[10px] py-[15px] justify-start text-zinc-500 text-base font-medium rounded-[10px] hover:bg-gray-50">
+            <Link className="cursor-pointer" href="/">
+              <div className="px-[10px] py-[15px] justify-start rounded-[10px] text-gray-600 b02-m hover:bg-gray-50">
                 채팅
               </div>
             </Link>
             <Link className="cursor-pointer" href="/">
-              <div className="px-[10px] py-[15px] justify-start text-zinc-500 text-base font-medium rounded-[10px] hover:bg-gray-50">
+              <div className="px-[10px] py-[15px] justify-start rounded-[10px] text-gray-600 b02-m hover:bg-gray-50">
                 마이페이지
               </div>
             </Link>
-            <Link className="cursor-pointer" href="/" onClick={onClickLogout}>
-              <div className="px-[10px] py-[15px] justify-start text-zinc-500 text-base font-medium rounded-[10px] hover:bg-gray-50">
+            <Link className="cursor-pointer" href="/landing" onClick={onClickLogout}>
+              <div className="px-[10px] py-[15px] justify-start rounded-[10px] text-gray-600 b02-m hover:bg-gray-50">
                 로그아웃
               </div>
             </Link>
           </>
         )}
         {!isLogged && (
-          <Link className="cursor-pointer" href="/" onClick={onClickLogin}>
-            <div className="px-[10px] py-[15px] justify-start text-zinc-500 text-base font-medium rounded-[10px] hover:bg-gray-50">
+          <Link className="cursor-pointer" href="/home" onClick={onClickLogin}>
+            <div className="px-[10px] py-[15px] justify-start rounded-[10px] text-gray-600 b02-m hover:bg-gray-50">
               로그인
             </div>
           </Link>

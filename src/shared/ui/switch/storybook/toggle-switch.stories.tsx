@@ -114,28 +114,20 @@ export const SuccessVariant: Story = {
 };
 
 /** 이미지와 동일한 두 상태 */
-export const ImageStates: Story = {
-  render: () => {
-    const [checked1, setChecked1] = useState(true);
-    const [checked2, setChecked2] = useState(false);
+const ImageStatesWrapper = () => {
+  const [checked1, setChecked1] = useState(true);
+  const [checked2, setChecked2] = useState(false);
 
-    return (
-      <div className="space-y-4">
-        <ToggleSwitch
-          checked={checked1}
-          onCheckedChange={setChecked1}
-          variant="primary"
-          size="md"
-        />
-        <ToggleSwitch
-          checked={checked2}
-          onCheckedChange={setChecked2}
-          variant="primary"
-          size="md"
-        />
-      </div>
-    );
-  },
+  return (
+    <div className="space-y-4">
+      <ToggleSwitch checked={checked1} onCheckedChange={setChecked1} variant="primary" size="md" />
+      <ToggleSwitch checked={checked2} onCheckedChange={setChecked2} variant="primary" size="md" />
+    </div>
+  );
+};
+
+export const ImageStates: Story = {
+  render: () => <ImageStatesWrapper />,
 };
 
 /** 모든 크기 비교 */

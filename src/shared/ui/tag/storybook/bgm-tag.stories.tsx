@@ -95,21 +95,23 @@ export const Sizes: Story = {
   ),
 };
 
-export const Interactive: Story = {
-  render: () => {
-    const [selected, setSelected] = useState(false);
+const InteractiveWrapper = () => {
+  const [selected, setSelected] = useState(false);
 
-    return (
-      <Wrapper>
-        <BgmTag
-          text="응원가 부르는거 좋아해요"
-          selected={selected}
-          onClick={() => setSelected(!selected)}
-        />
-        <p className="text-sm text-gray-600">클릭하여 선택 상태를 토글할 수 있습니다.</p>
-      </Wrapper>
-    );
-  },
+  return (
+    <Wrapper>
+      <BgmTag
+        text="응원가 부르는거 좋아해요"
+        selected={selected}
+        onClick={() => setSelected(!selected)}
+      />
+      <p className="text-sm text-gray-600">클릭하여 선택 상태를 토글할 수 있습니다.</p>
+    </Wrapper>
+  );
+};
+
+export const Interactive: Story = {
+  render: () => <InteractiveWrapper />,
 };
 
 export const LongText: Story = {

@@ -81,7 +81,7 @@ export default function Radio({
 
       <span
         className={clsx(
-          size === "lg" ? "text-xl font-semibold leading-7" : "text-base font-medium leading-6",
+          size === "lg" ? "text-xl font-medium leading-7" : "text-base font-medium leading-6",
           "text-zinc-500 font-['Pretendard']"
         )}
       >

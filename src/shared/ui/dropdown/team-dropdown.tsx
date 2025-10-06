@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 import { baseBallTeamItems } from "@/entities/team/team";
@@ -14,6 +14,7 @@ type Props = {
   placeholder?: string;
   className?: string;
   disabled?: boolean;
+  fitContent?: boolean;
   minWidth?: number;
   maxWidth?: number;
 };
@@ -25,19 +26,17 @@ export default function TeamDropdown({
   placeholder = "팀 선택",
   className,
   disabled,
+  fitContent = false,
   minWidth = 192,
   maxWidth = 384,
 }: Props) {
   const [open, setOpen] = useState(false);
   const [internal, setInternal] = useState<string | number | null>(value ?? null);
   const rootRef = useRef<HTMLDivElement | null>(null);
-  const btnRef = useRef<HTMLButtonElement | null>(null);
-  const listRef = useRef<HTMLDivElement | null>(null);
-  const [triggerWidth, setTriggerWidth] = useState<number>(minWidth);
 
   const selectedLabel = useMemo(() => {
     const v = value ?? internal;
-    return v !== null && v !== undefined ? (items.find((i) => i.value === v)?.label ?? "") : "";
+    return v != null ? (items.find((i) => i.value === v)?.label ?? "") : "";
   }, [value, internal, items]);
 
   useEffect(() => {
@@ -49,46 +48,36 @@ export default function TeamDropdown({
     return () => document.removeEventListener("mousedown", onClickAway);
   }, []);
 
-  useLayoutEffect(() => {
-    if (!btnRef.current) return;
-    const measure = () => {
-      const el = btnRef.current!;
-      const w = Math.max(minWidth, Math.min(el.scrollWidth, maxWidth));
-      setTriggerWidth(w);
-    };
-    measure();
-    const ro = new ResizeObserver(measure);
-    ro.observe(btnRef.current);
-    return () => ro.disconnect();
-  }, [selectedLabel, placeholder, minWidth, maxWidth]);
-
   const select = (val: string | number) => {
     setInternal(val);
     onChange?.(val);
     setOpen(false);
-    btnRef.current?.focus();
   };
 
+  const widthStyle = fitContent ? { minWidth, maxWidth } : undefined;
+
   return (
-    <div ref={rootRef} className={clsx("relative inline-block", className)}>
+    <div
+      ref={rootRef}
+      className={clsx(fitContent ? "relative inline-block" : "relative w-full", className)}
+    >
       <button
-        ref={btnRef}
         type="button"
         disabled={disabled}
         aria-haspopup="listbox"
         aria-expanded={open}
         onClick={() => !disabled && setOpen((v) => !v)}
-        style={{ width: triggerWidth }}
+        style={widthStyle}
         className={clsx(
-          "h-14 px-5 relative inline-flex items-center justify-between",
-          "rounded-2xl border border-zinc-200 bg-neutral-50",
+          "h-14 px-5 inline-flex items-center justify-between rounded-2xl border border-zinc-200 bg-neutral-50",
+          fitContent ? "w-auto whitespace-nowrap" : "w-full",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-300",
-          disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
+          disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"
         )}
       >
         <span
           className={clsx(
-            "text-lg leading-relaxed font-normal font-['Pretendard'] whitespace-nowrap",
+            "text-lg leading-relaxed font-['Pretendard']",
             selectedLabel ? "text-black" : "text-neutral-400"
           )}
         >
@@ -108,18 +97,11 @@ export default function TeamDropdown({
       {open && (
         <div
           role="listbox"
-          ref={listRef}
-          style={{ width: triggerWidth }}
-          className={clsx(
-            "absolute left-0 top-full mt-5 z-50",
-            "inline-flex flex-col items-stretch",
-            "rounded-2xl bg-white shadow-[var(--shadow-03,_0_4px_32px_0_rgb(0_0_0/_0.05),_4px_0_32px_0_rgb(0_0_0/_0.05))]"
-          )}
+          style={widthStyle}
+          className={clsx("absolute left-0 top-full z-50 mt-5", fitContent ? "w-auto" : "w-full")}
         >
-          <div className="max-h-72 overflow-auto rounded-2xl">
-            {items.map((item, i) => {
-              const first = i === 0;
-              const last = i === items.length - 1;
+          <div className="max-h-72 overflow-auto rounded-2xl border border-zinc-200 bg-white shadow-[0_4px_32px_0_rgb(0_0_0/0.05),_4px_0_32px_0_rgb(0_0_0/0.05)]">
+            {items.map((item) => {
               const isSelected = (value ?? internal) === item.value;
               return (
                 <button
@@ -128,24 +110,14 @@ export default function TeamDropdown({
                   onClick={() => select(item.value)}
                   aria-selected={isSelected}
                   className={clsx(
-                    "relative h-14 px-5 text-left w-full",
-                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-300"
+                    "relative h-14 w-full px-5 text-left",
+                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-300",
+                    isSelected ? "bg-neutral-50" : "hover:bg-neutral-50"
                   )}
                 >
-                  <div
-                    className={clsx(
-                      "pointer-events-none absolute inset-0 border-zinc-200",
-                      first && "rounded-t-2xl border border-b-0",
-                      last && "rounded-b-2xl border border-t-0",
-                      !first && !last && "border-l border-r",
-                      isSelected ? "bg-neutral-50" : "bg-white"
-                    )}
-                  />
-                  <div className="relative z-10 inline-flex w-full items-center justify-between">
-                    <span className="text-lg leading-relaxed font-normal font-['Pretendard'] text-neutral-400 whitespace-nowrap">
-                      {item.label}
-                    </span>
-                  </div>
+                  <span className="text-lg leading-relaxed font-['Pretendard'] text-neutral-700">
+                    {item.label}
+                  </span>
                 </button>
               );
             })}

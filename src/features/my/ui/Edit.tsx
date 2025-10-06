@@ -59,9 +59,8 @@ export default function Edit() {
             </div>
             <div className="flex-1 flex flex-col items-center gap-2">
               <p className="text-b01 text-gray-600 font-weight-r">로그인 방법</p>
-              {/* TODO: 추후 카카오 이미지 수정 */}
               <Image
-                src="/icons/kakao_icon.svg"
+                src="/icons/kakao_login.svg"
                 alt="카카오"
                 width={68}
                 height={68}
@@ -79,7 +78,7 @@ export default function Edit() {
             </div>
           </div>
         </div>
-        <Button className="w-[310px] h-[70px] self-end py-[20px] px-[180px] gap-2.5">
+        <Button className="w-[310px] h-[70px] self-end py-[20px] px-[180px] gap-2.5 cursor-pointer">
           <span className="text-b01 font-weight-sb leading-150">저장하기</span>
         </Button>
       </div>

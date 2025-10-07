@@ -47,7 +47,6 @@ export default function My() {
             </div>
             <div className="flex-1 flex flex-col items-center gap-2">
               <p className="text-b01 text-gray-600 font-weight-r">로그인 방법</p>
-              {/* TODO: 추후 카카오 이미지 수정 */}
               <Image
                 src="/icons/kakao_login.svg"
                 alt="로그인 방법"
@@ -71,21 +70,21 @@ export default function My() {
           {/* 콘텐츠 */}
           <div className="flex flex-row gap-3 py-[4px] px-[30px] hover:bg-gray-50 cursor-pointer">
             <Image src="/icons/bookmark.svg" alt="스크랩 한 모집글" width={30} height={30} />
-            <p className="font-weight-m text-b01 leading-150">스크랩 한 모집글</p>
+            <Link href="/my/scrap">
+              <p className="font-weight-m text-b01 leading-150">스크랩 한 모집글</p>
+            </Link>
           </div>
           <div className="flex flex-row  gap-3 py-[4px] px-[30px] hover:bg-gray-50 cursor-pointer">
             <Image src="/icons/pen.svg" alt="내가 작성한 모집글" width={30} height={30} />
-            <p className="font-weight-m text-b01 leading-150">내가 작성한 모집글</p>
+            <Link href="/my/hosting">
+              <p className="font-weight-m text-b01 leading-150">내가 작성한 모집글</p>
+            </Link>
           </div>
           <div className="flex flex-row  gap-3 py-[4px] px-[30px] hover:bg-gray-50 cursor-pointer">
-            <Image
-              src="/images/default.png"
-              alt="내가 참여한 글"
-              width={30}
-              height={30}
-              // onClick={() => {/* 클릭 핸들러 */}}
-            />
-            <p className="font-weight-m text-b01 leading-150">내가 참여한 글</p>
+            <Image src="/images/default.png" alt="내가 참여한 글" width={30} height={30} />
+            <Link href="/my/joined">
+              <p className="font-weight-m text-b01 leading-150">내가 참여한 글</p>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,5 +1,4 @@
-/* eslint-disable storybook/no-renderer-packages */
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import Radio from "@/shared/ui/radio/radio";
 import { RadioGroup } from "@/shared/ui/radio";
 import { useState } from "react";

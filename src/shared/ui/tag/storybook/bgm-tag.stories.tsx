@@ -10,7 +10,7 @@ const meta: Meta<typeof BgmTag> = {
   },
   tags: ["autodocs"],
   argTypes: {
-    variant: {
+    state: {
       control: { type: "select" },
       options: ["default", "selected"],
     },
@@ -28,7 +28,7 @@ const meta: Meta<typeof BgmTag> = {
   },
   args: {
     text: "응원가 부르는거 좋아해요",
-    variant: "default",
+    state: "default",
     size: "md",
     selected: false,
   },

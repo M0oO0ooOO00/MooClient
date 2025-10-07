@@ -1,6 +1,5 @@
-/* eslint-disable storybook/no-renderer-packages */
-import type { Meta, StoryObj } from "@storybook/react";
-import { useState } from "react";
+import type { Meta, StoryObj } from "@storybook/nextjs";
+import React, { useState } from "react";
 import DateSelect from "../date-select";
 
 const meta = {
@@ -21,8 +20,11 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: (args) => {
-    const [v, setV] = useState<Date | null>(null);
-    return <DateSelect {...args} value={v} onChange={setV} />;
+    const ComponentWithHooks = () => {
+      const [v, setV] = useState<Date | null>(null);
+      return <DateSelect {...args} value={v} onChange={setV} />;
+    };
+    return <ComponentWithHooks />;
   },
   args: {
     placeholder: "경기 날짜 선택",
@@ -33,8 +35,11 @@ export const Default: Story = {
 
 export const WithInitialValue: Story = {
   render: (args) => {
-    const [v, setV] = useState<Date | null>(new Date());
-    return <DateSelect {...args} value={v} onChange={setV} />;
+    const ComponentWithHooks = () => {
+      const [v, setV] = useState<Date | null>(new Date());
+      return <DateSelect {...args} value={v} onChange={setV} />;
+    };
+    return <ComponentWithHooks />;
   },
   args: {
     disabledBeforeToday: true,
@@ -44,8 +49,11 @@ export const WithInitialValue: Story = {
 
 export const MondayStart: Story = {
   render: (args) => {
-    const [v, setV] = useState<Date | null>(null);
-    return <DateSelect {...args} value={v} onChange={setV} />;
+    const ComponentWithHooks = () => {
+      const [v, setV] = useState<Date | null>(null);
+      return <DateSelect {...args} value={v} onChange={setV} />;
+    };
+    return <ComponentWithHooks />;
   },
   args: {
     placeholder: "경기 날짜 선택",

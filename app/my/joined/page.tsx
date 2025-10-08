@@ -1,9 +1,10 @@
 import Joined from "@/features/my/ui/Joined";
+import MyPageLayout from "../MyPageLayout";
 
 export default function Page() {
   return (
-    <div className="flex flex-col gap-[56px]">
+    <MyPageLayout>
       <Joined />
-    </div>
+    </MyPageLayout>
   );
 }

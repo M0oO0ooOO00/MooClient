@@ -73,7 +73,7 @@ export default function Edit() {
             </div>
             <div className="flex-1 flex flex-col items-center gap-2">
               <p className="text-b01 text-gray-600 font-weight-r">활동상태</p>
-              <p className="text-t04 font-weight-r leading-140 text-main-green">활동중</p>
+              <p className="text-t04 font-weight-r leading-140 text-green-main">활동중</p>
             </div>
           </div>
         </div>

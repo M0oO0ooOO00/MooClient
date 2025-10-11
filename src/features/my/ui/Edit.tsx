@@ -20,7 +20,6 @@ export default function Edit() {
         <div className="flex flex-col rounded-[20px] border p-[30px] gap-[10px] bg-white shadow-md w-full mb-10">
           <div className="flex mt-0 mb-4 border-b">
             <div className="flex items-center gap-4 mb-6 w-full">
-              {/* 프로필 이미지 */}
               <div className="w-12 h-12 rounded-full bg-pink-500 flex items-center justify-center flex-shrink-0">
                 <Image
                   src="/images/pink.png"
@@ -74,7 +73,7 @@ export default function Edit() {
             </div>
             <div className="flex-1 flex flex-col items-center gap-2">
               <p className="text-b01 text-gray-600 font-weight-r">활동상태</p>
-              <p className="text-t04 font-weight-r leading-140 text-main-green">활동중</p>
+              <p className="text-t04 font-weight-r leading-140 text-green-main">활동중</p>
             </div>
           </div>
         </div>

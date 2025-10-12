@@ -27,7 +27,12 @@ const WarnTable = ({ data }: WarnTableProps) => {
             </td>
             <td className="px-6 py-5 text-b01 leading-150 font-r text-gray-900 ">{row.type}</td>
             <td className="px-6 py-5 text-b01 leading-150 font-r text-gray-600 text-end pl-60">
-              <Link href={row.linkOrPhoto} className="text-blue-main underline" target="_blank">
+              <Link
+                href={row.linkOrPhoto}
+                className="text-blue-main underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {row.linkOrPhoto}
               </Link>
             </td>

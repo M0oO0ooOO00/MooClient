@@ -40,7 +40,9 @@ export const PreferenceTag = React.forwardRef<HTMLDivElement, PreferenceTagProps
 
     return (
       <div ref={ref} className={cn(tagVariants({ state: s, size }), className)} {...props}>
-        {iconSrc && <Image src={iconSrc} alt="" className="h-5 w-5 shrink-0" />}
+        {iconSrc && (
+          <Image src={iconSrc} alt="" className="h-5 w-5 shrink-0" width={20} height={20} />
+        )}
         <span className="font-normal">{text}</span>
       </div>
     );

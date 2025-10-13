@@ -1,10 +1,11 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import DateSelect from "@/shared/ui/write/date-select";
 import { RadioGroup } from "@/shared/ui/radio";
-import { BgmTag } from "@/shared/ui/tag/bgm-tag";
+import { PreferenceTag } from "@/shared/ui/tag/preference-tag";
+import { preferenceTags } from "@/entities/chips/preference-tag";
 import TeamDropdown from "@/shared/ui/dropdown/team-dropdown";
 import { baseBallTeamItems } from "@/entities/team/team";
 import { baseBallStadiumItems } from "@/entities/team/stadium";
@@ -21,28 +22,7 @@ export default function Page() {
   const [gender, setGender] = useState<"F" | "M">("M");
   const [prefGender, setPrefGender] = useState<"F" | "M" | "ANY">("M");
   const [note, setNote] = useState("");
-
-  const allTags = useMemo(
-    () => [
-      "응원가 부르는거 좋아해요",
-      "구경",
-      "테이블",
-      "경기보면서 맛있는거 먹기",
-      "응원석이 가까이 있는게 좋아요",
-      "응원석이 가까이 있는거 싫어요",
-      "햇빛 좋아요",
-      "햇빛 싫어요",
-      "사진",
-      "외야도",
-      "선수 가까이",
-    ],
-    []
-  );
-  const [picked, setPicked] = useState<string[]>([
-    "응원가 부르는거 좋아해요",
-    "응원석이 가까이 있는게 좋아요",
-    "햇빛 싫어요",
-  ]);
+  const [picked, setPicked] = useState<string[]>([]);
 
   const toggleTag = (t: string) =>
     setPicked((cur) => (cur.includes(t) ? cur.filter((x) => x !== t) : [...cur, t]));
@@ -200,23 +180,25 @@ export default function Page() {
               <p className="mb-5 text-xl font-semibold leading-7 text-zinc-800">성향</p>
 
               <div className="mb-5 flex flex-wrap gap-3">
-                {allTags.slice(0, 5).map((t) => (
-                  <BgmTag
-                    key={t}
-                    text={t}
-                    selected={picked.includes(t)}
-                    onClick={() => toggleTag(t)}
+                {preferenceTags.slice(0, 5).map(({ text, iconSrc }) => (
+                  <PreferenceTag
+                    key={text}
+                    text={text}
+                    iconSrc={iconSrc}
+                    selected={picked.includes(text)}
+                    onClick={() => toggleTag(text)}
                   />
                 ))}
               </div>
 
               <div className="flex flex-wrap gap-3">
-                {allTags.slice(5).map((t) => (
-                  <BgmTag
-                    key={t}
-                    text={t}
-                    selected={picked.includes(t)}
-                    onClick={() => toggleTag(t)}
+                {preferenceTags.slice(5).map(({ text, iconSrc }) => (
+                  <PreferenceTag
+                    key={text}
+                    text={text}
+                    iconSrc={iconSrc}
+                    selected={picked.includes(text)}
+                    onClick={() => toggleTag(text)}
                   />
                 ))}
               </div>

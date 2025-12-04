@@ -5,6 +5,7 @@ Next.js 14 + TypeScript + FSD (Feature-Sliced Design) 아키텍처 기반 프로
 ## 📁 프로젝트 구조
 
 이 프로젝트는 **Feature-Sliced Design (FSD)** 아키텍처를 기반으로 구성되어 있습니다.
+https://feature-sliced.design/kr/docs/reference/layers
 
 ```
 moo-fe/
